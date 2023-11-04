@@ -116,6 +116,39 @@ class AppService
         ];
     }
 
+    /**
+     * @param $cep
+     * @return array|\Illuminate\Http\JsonResponse
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function getAddressByCep($cep)
+    {
+        try {
+            $client   = new Client();
+            $url      = 'https://viacep.com.br/ws/';
+            $cep      = preg_replace("/[.\/-]/", '', $cep);
+            $res      = $client->request('GET', $url . $cep . '/json/');
+            $response = (object)json_decode($res->getBody(), true);
+
+            if (isset($response->erro) && $response->erro) {
+                throw new \Exception("CEP não encontrado!");
+            }
+
+            return [
+                'zip_code'    => $cep,
+                'street'      => $response->logradouro,
+                'district'    => $response->bairro,
+                'city'        => $response->localidade,
+                'city_'       => $this->removeAccentuation($response->localidade),
+                'uf'          => $response->uf,
+                'street_view' => 'maps.google.co.in/maps?q=' . $cep
+            ];
+        } catch (\Exception $e) {
+            return response()->json(['error' => true, 'message' => $e->getMessage()], 422);
+        }
+
+    }
+
 
     /**
      * @param $value

@@ -126,20 +126,7 @@ class Controller extends BaseController
         }
     }
 
-    /**
-     * @param Request $request
-     * @return JsonResponse
-     */
-    public function getAddressByCep(Request $request): JsonResponse
-    {
-        try {
-            $cep = $request->get('cep');
-            $cep = preg_replace("/[.\/-]/", '', $cep);
-            return $this->service->getAddressByCep($cep);
-        } catch (Exception $exception) {
-            return $this->sendBadResponse($exception);
-        }
-    }
+
 
     /**
      * @return mixed

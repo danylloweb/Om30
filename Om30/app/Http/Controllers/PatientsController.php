@@ -52,4 +52,23 @@ class PatientsController extends Controller
         });
         return response()->json($objects, 200);
     }
+
+    /**
+     * @param Request $request
+     * @return array|JsonResponse
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function getAddressByCep(Request $request):array|JsonResponse
+    {
+        try {
+            $cep = $request->get('cep');
+            $cep = preg_replace("/[.\/-]/", '', $cep);
+           return Cache::store('redis')->tags('ceps')->remember($cep, 12000, function () use ($cep) {
+                return $this->service->getAddressByCep($cep);
+            });
+
+        } catch (\Exception $exception) {
+            return $this->sendBadResponse($exception);
+        }
+    }
 }
