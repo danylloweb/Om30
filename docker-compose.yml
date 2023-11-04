@@ -1,0 +1,53 @@
+version: "3.7"
+services:
+    api_patient:
+        image: danyllo431/laravel_php81:latest
+        restart: unless-stopped
+        container_name: api_patient
+        volumes:
+            - ./Om30/:/var/www/html
+        ports:
+            -  80:80
+        depends_on:
+            - mysql
+            - redis
+        networks:
+            - Om30_test
+
+    mysql:
+        image: mysql:5.7.22
+        restart: unless-stopped
+        environment:
+            MYSQL_DATABASE: api_patient
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_PASSWORD: root
+            MYSQL_USER: root
+        volumes:
+            - ./data/mysql/dbdata:/var/lib/mysql
+        command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --innodb-buffer-pool-size=4G
+        networks:
+            - Om30_test
+
+    redis:
+        image: redis:latest
+        networks:
+            - Om30_test
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin:latest
+        ports:
+            - 9001:80
+        environment:
+            - UPLOAD_LIMIT=1G
+            - PMA_ARBITRARY=1
+        links:
+            - mysql
+        networks:
+            - Om30_test
+
+networks:
+    Om30_test:
+        driver: bridge
+
+
+

@@ -1,0 +1,15 @@
+/Om30/public/hot
+/Om30/public/storage
+/Om30/storage/*.key
+/Om30/vendor
+/Om30/.env
+/Om30/.phpunit.result.cache
+/Om30/Homestead.json
+/Om30/Homestead.yaml
+/Om30/npm-debug.log
+/Om30/yarn-error.log
+/.idea
+/.vscode
+/.docker
+/data/mysql/
+/data/db/
