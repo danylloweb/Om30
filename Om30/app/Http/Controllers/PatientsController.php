@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\PatientService;
 use App\Validators\PatientValidator;
+use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
@@ -56,7 +57,7 @@ class PatientsController extends Controller
     /**
      * @param Request $request
      * @return array|JsonResponse
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
     public function getAddressByCep(Request $request):array|JsonResponse
     {

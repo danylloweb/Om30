@@ -6,6 +6,7 @@ use App\Entities\Patient;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Cache;
 
 class  EventServiceProvider extends ServiceProvider
 {
@@ -37,7 +38,6 @@ class  EventServiceProvider extends ServiceProvider
     private function afterCreatedModels()
     {
         Patient::created(function () {
-            $this->dashboardService->setQtyPatient();
             Cache::store('redis')->tags('patients')->flush();
         });
         Patient::updated(function () {
