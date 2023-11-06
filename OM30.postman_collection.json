@@ -1,0 +1,407 @@
+{
+	"info": {
+		"_postman_id": "c93f23df-5885-4c5e-b57b-5befc588a5ab",
+		"name": "OM30",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3417329",
+		"_collection_link": "https://martian-astronaut-464871.postman.co/workspace/PerfectPay~1e6397c1-eb8c-4624-bead-cd20291d6e69/collection/3417329-c93f23df-5885-4c5e-b57b-5befc588a5ab?action=share&source=collection_link&creator=3417329"
+	},
+	"item": [
+		{
+			"name": "Lista de Pacientes ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:8000"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:8000/cadastros/pessoas/companies"
+					},
+					{
+						"key": "Upgrade-Insecure-Requests",
+						"value": "1"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"118\", \"Google Chrome\";v=\"118\", \"Not=A?Brand\";v=\"99\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "search",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "descricao",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/patients?limit=15&orderBy=id&sortedBy=desc&search=teste",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"patients"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "15"
+						},
+						{
+							"key": "orderBy",
+							"value": "id"
+						},
+						{
+							"key": "sortedBy",
+							"value": "desc"
+						},
+						{
+							"key": "search",
+							"value": "teste"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View de Paciente",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:8000"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:8000/cadastros/pessoas/companies"
+					},
+					{
+						"key": "Upgrade-Insecure-Requests",
+						"value": "1"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"118\", \"Google Chrome\";v=\"118\", \"Not=A?Brand\";v=\"99\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "search",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "descricao",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/patients/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"patients",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update de Paciente",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:8000"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:8000/cadastros/pessoas/companies"
+					},
+					{
+						"key": "Upgrade-Insecure-Requests",
+						"value": "1"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"118\", \"Google Chrome\";v=\"118\", \"Not=A?Brand\";v=\"99\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "full_name",
+							"value": "Nome completo do paciente",
+							"type": "text"
+						},
+						{
+							"key": "full_name_mom",
+							"value": "Nome completo da mãe do paciente",
+							"type": "text"
+						},
+						{
+							"key": "cpf",
+							"value": "0862487553",
+							"type": "text"
+						},
+						{
+							"key": "cns",
+							"value": "654649849s",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/patients/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"patients",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Paciente",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:8000"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:8000/cadastros/pessoas/companies"
+					},
+					{
+						"key": "Upgrade-Insecure-Requests",
+						"value": "1"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"118\", \"Google Chrome\";v=\"118\", \"Not=A?Brand\";v=\"99\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "full_name",
+							"value": "Nome completo do paciente",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "full_name_mom",
+							"value": "Nome completo da mãe do paciente",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "cpf",
+							"value": "0862487553",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "cns",
+							"value": "654649849s",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/patients/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"patients",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Address",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:8000"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:8000/cadastros/pessoas/companies"
+					},
+					{
+						"key": "Upgrade-Insecure-Requests",
+						"value": "1"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"118\", \"Google Chrome\";v=\"118\", \"Not=A?Brand\";v=\"99\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "search",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "descricao",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/getAddress?cep=53370660",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"getAddress"
+					],
+					"query": [
+						{
+							"key": "cep",
+							"value": "53370660"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
